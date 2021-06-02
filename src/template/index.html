@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title><%= htmlWebpackPlugin.options.title %></title>
+  </head>
+  <body>
+    <!--[if lte IE 9]><p>Internet Exploreは非対応です。</p><![endif]-->
+    <div id="app"></div>
+  </body>
+  <noscript>
+    <div
+      style="
+        margin: 40px auto;
+        border: 2px solid #e5e5e5;
+        border-radius: 10px;
+        border-image: none;
+        text-align: center;
+        font-weight: 600;
+        width: 600px;
+      "
+    >
+      <h1
+        style="
+          margin: 0 auto;
+          color: #8b8c8e;
+          line-height: 1.5;
+          font-family: Hiragino Kaku Gothic ProN;
+        "
+      >
+        Playwellへようこそ
+      </h1>
+      <h3
+        style="
+          color: #8b8c8e;
+          margin: 0 auto 20px auto;
+          font-family: Hiragino Kaku Gothic ProN;
+        "
+      >
+        このサイトは<span style="color: red">Javascriptを有効化</span
+        >してお使いください。
+      </h3>
+    </div>
+  </noscript>
+  <script>
+    var userAgent = window.navigator.userAgent;
+    var appVersion = window.navigator.appVersion;
+    if (userAgent.indexOf('Trident') != -1 || userAgent.indexOf('MSIE') != -1) {
+      document.querySelector('#app').innerHTML =
+        '<div style="margin: 40px auto; border:2px solid #e5e5e5; border-radius:10px; border-image: none; text-align: center; font-weight: 600; width: 600px"><h1 style="margin:0 auto; color:#8b8c8e; line-height:1.5; font-family:Hiragino Kaku Gothic ProN">Playwellへようこそ</h1><h2 style="color:#8b8c8e; margin:0 auto 20px auto; font-family:Hiragino Kaku Gothic ProN">Internet Exploreは<span style="color:red">非対応</span>です。</h2><p>申し訳ありませんが下記のようなブラウザを使い、再度アクセスをお願いいたします。</p><ul style="list-style:none; text-decoration: none; overflow: hidden; margin:20px auto;"><li style="background-color: #333; float: left; width: 160px; margin-right:10px; display: inline-block;"><a href="https://www.google.com/intl/ja_jp/chrome/" style="font-weight: bold; padding: 20px; text-decoration: none; color: #e5e5e5; font-weight: bold;">Google Chrome </a></li><li style="background-color: #333; float: left; width: 160px; margin-right:10px; display: inline-block;"><a href="https://www.apple.com/jp/safari/" style="font-weight: bold; padding: 20px; text-decoration: none; color: #e5e5e5; font-weight: bold;">Safari </a></li><li style="background-color: #333; float: left; width: 160px; display: inline-block;"><a href="https://www.microsoft.com/ja-jp/edge" style="font-weight: bold; padding: 20px; text-decoration: none; color: #e5e5e5; font-weight: bold;">Edge</a></li></ul></div>';
+    }
+  </script>
+</html>

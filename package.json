@@ -1,0 +1,38 @@
+{
+  "name": "use-react-hooks",
+  "version": "1.0.0",
+  "description": "using react hooks",
+  "main": "src/app.js",
+  "repository": "git@github.com:blackraccoon000/use-react-hooks.git",
+  "author": "Yutaka Fujii <yutakaf@playwell.site>",
+  "license": "BSD-3-Clause",
+  "scripts": {
+    "build:dev": "webpack --env development",
+    "build:prod": "webpack --env production",
+    "serve": "webpack serve --open --env development"
+  },
+  "dependencies": {
+    "@babel/core": "^7.14.3",
+    "@babel/plugin-proposal-class-properties": "^7.13.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.14.4",
+    "@babel/plugin-transform-runtime": "^7.14.3",
+    "@babel/preset-env": "^7.14.4",
+    "@babel/preset-react": "^7.13.13",
+    "@babel/runtime": "^7.14.0",
+    "babel-loader": "^8.2.2",
+    "babel-plugin-styled-components": "^1.12.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "css-loader": "^5.2.6",
+    "favicons-webpack-plugin": "^5.0.2",
+    "html-webpack-plugin": "^5.3.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "sass-loader": "^12.0.0",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.0",
+    "webpack-dev-server": "^3.11.2",
+    "webpack-merge": "^5.7.3"
+  }
+}
