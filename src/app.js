@@ -10,7 +10,7 @@ const Wrapper = styled.div`
   border: calc(1rem / 16) solid rgb(59, 59, 59);
   border-radius: calc(5rem / 16);
   background-color: rgb(191, 148, 83);
-  width: auto;
+  width: calc(250rem / 16);
 `;
 
 const Title = styled.p`
@@ -36,27 +36,52 @@ const OnButton = styled.button`
   margin: calc(5rem / 16);
 `;
 
+const Form = styled.form`
+  border: none;
+  margin: calc(5rem / 16);
+`;
+
+const InputBox = styled.input`
+  border: none;
+  border-radius: calc(5rem / 16);
+  text-decoration: none;
+  padding: calc(6rem / 16);
+  margin: 0 0 calc(10rem / 16) 0;
+`;
+
 const App = (props) => {
   const [count, setCount] = useState(props.count);
+  const [text, setText] = useState(props.text);
 
   return (
     <Wrapper>
-      <Title>The current count is {count}</Title>
+      <Title>
+        The current {text} is {count}
+      </Title>
       <ButtonWrapper>
         <OnButton onClick={() => setCount(count + 1)}>+1</OnButton>
         <OnButton onClick={() => setCount(0)}>reset</OnButton>
         <OnButton onClick={() => setCount(count - 1)}>-1</OnButton>
       </ButtonWrapper>
+      <Form action="">
+        <InputBox
+          placeholder="input box"
+          onChange={(e) => setText(e.target.value)}
+          defaultValue={props.text}
+        />
+      </Form>
     </Wrapper>
   );
 };
 
 App.propTypes = {
   count: PropTypes.number,
+  text: PropTypes.string,
 };
 
 App.defaultProps = {
   count: 0,
+  text: 'count',
 };
 
 ReactDOM.render(<App />, document.getElementById('app'));
