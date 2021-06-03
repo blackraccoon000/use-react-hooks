@@ -1,5 +1,16 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
+import { Reset } from 'styled-reset';
+import fonts from './utils/fonts';
 import CountUp from './components/CountUp';
+import Note from './components/Note';
 
-ReactDOM.render(<CountUp />, document.getElementById('app'));
+const jsx = (
+  <>
+    <Reset />
+    {fonts(document)}
+    <Note />
+  </>
+);
+
+ReactDOM.render(jsx, document.getElementById('app'));

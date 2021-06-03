@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
@@ -10,7 +9,6 @@ const Wrapper = styled.div`
   border: calc(1rem / 16) solid rgb(59, 59, 59);
   border-radius: calc(5rem / 16);
   background-color: rgb(191, 148, 83);
-  width: calc(250rem / 16);
 `;
 
 const Title = styled.p`
