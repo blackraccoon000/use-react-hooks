@@ -50,6 +50,7 @@ const InputBox = styled.input`
 `;
 
 const CountUp = (props) => {
+  console.log(props);
   const [state, setState] = useState({
     count: props.count,
     text: props.text,
