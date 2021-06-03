@@ -8,18 +8,6 @@ const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 module.exports = {
   entry: './src/app.js',
   output: {
-    /**
-     * publicPathがないと参照先URLの階層が違う場合に相対Pathでのアクセスになり、
-     * 各URLからbundle.jsやfaviconにアクセスができなくなる。
-     *
-     * 例：
-     * ○アクセス先
-     * http://localhost:8082/article/7odtdk62l
-     * ○参照ファイル名(失敗)
-     * http://localhost:8082/article/dist/bundle.js?dd29d78971b5809d4935
-     * ○参照ファイル名(成功)
-     * http://localhost:8082/dist/bundle.js?dd29d78971b5809d4935
-     */
     publicPath: '/dist/',
     path: path.resolve(__dirname, '../public/dist'),
     filename: 'bundle.js',
@@ -64,7 +52,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       lang: 'ja-JP',
-      title: 'PlayWell | よく遊びよく学べ',
+      title: 'Template Page | よく遊びよく学べ テンプレート',
       filename: path.resolve(__dirname, '../public/index.html'),
       hash: true,
       template: path.resolve(__dirname, '../src/template/index.html'),
@@ -72,7 +60,7 @@ module.exports = {
     new FaviconsWebpackPlugin({
       logo: path.resolve(
         __dirname,
-        '../src/favicons/playwell-icon-260_260_TurquoiseBlue.png'
+        '../src/template/favicon/playwell-icon-260_260_TurquoiseBlue.png'
       ),
       cache: true,
       mode: 'webapp',
@@ -80,8 +68,8 @@ module.exports = {
       version: '1.0',
       lang: 'ja-JP',
       favicons: {
-        appName: 'react-blog-built-in-microCMS',
-        appDescription: 'React with built in microCMS',
+        appName: 'React Template',
+        appDescription: 'React Template',
         developerName: 'Yutaka Fujii',
         developerURL: 'git@github.com:blackraccoon000/use-react-hooks.git',
         icons: {

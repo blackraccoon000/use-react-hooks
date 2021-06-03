@@ -1,15 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import { Reset } from 'styled-reset';
 import fonts from './utils/fonts';
-import CountUp from './components/CountUp';
-import Note from './components/Note';
+import AppRouter from './routers/AppRouter';
 
 const jsx = (
   <>
     <Reset />
     {fonts(document)}
-    <Note />
+    <AppRouter />
   </>
 );
 
