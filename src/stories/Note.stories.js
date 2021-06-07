@@ -1,5 +1,7 @@
 import React from 'react';
 import Note from '../components/Note';
+import NoteContext from '../context/NotesContext';
+import { action } from '@storybook/addon-actions';
 
 export default {
   title: 'Components/Note',
@@ -7,7 +9,19 @@ export default {
   argTypes: {},
 };
 
-const Template = (args) => <Note {...args} />;
+const Template = (args) => {
+  return (
+    <NoteContext.Provider value={{ dispatch: action('dispatch') }}>
+      <Note {...args} />
+    </NoteContext.Provider>
+  );
+};
 
 export const Primary = Template.bind({});
-Primary.args = {};
+Primary.args = {
+  note: {
+    title: 'Mock Title',
+    body: 'Mock Body',
+  },
+  num: 1,
+};
