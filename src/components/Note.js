@@ -1,7 +1,8 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import NotesContext from '../context/NotesContext';
+import useMousePosition from '../hooks/useMousePosition';
 
 const NoteWrapper = styled.div`
   align-items: center;
@@ -61,6 +62,7 @@ const RemoveButton = styled(OnButton)`
 
 const Note = ({ note, num }) => {
   const { dispatch } = useContext(NotesContext);
+  const position = useMousePosition();
 
   return (
     <NoteWrapper>
@@ -69,6 +71,9 @@ const Note = ({ note, num }) => {
         <NoteTitle>{note.title}</NoteTitle>
       </NoteTitleWrapper>
       <NoteBody>{note.body}</NoteBody>
+      <p>
+        {position.x} / {position.y}
+      </p>
       <RemoveButton
         onClick={() => dispatch({ type: 'REMOVE_NOTE', title: note.title })}
       >

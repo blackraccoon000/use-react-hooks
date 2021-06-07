@@ -7,7 +7,7 @@ import NotesContext from '../context/NotesContext';
 const AddingWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin: calc(10rem / 16) 0 0 calc(10rem / 16);
+  margin: calc(10rem / 16);
 `;
 
 const Label = styled.label`
