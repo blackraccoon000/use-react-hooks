@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
@@ -48,31 +48,37 @@ const InputBox = styled.input`
 `;
 
 const CountUp = (props) => {
-  console.log(props);
-  const [state, setState] = useState({
-    count: props.count,
-    text: props.text,
-  });
+  const [count, setCount] = useState(props.count);
+  const [text, setText] = useState('');
+
+  useEffect(() => {
+    console.log('This should only run once!');
+  }, []);
+
+  useEffect(() => {
+    console.log('useEffect run count');
+    document.title = count;
+  }, [count]);
+
+  useEffect(() => {
+    console.log('useEffect run text');
+  }, [text]);
 
   return (
     <Wrapper>
       <Title>
-        The current {state.text} is {state.count}
+        The current {text || 'count'} is {count}
       </Title>
       <ButtonWrapper>
-        <OnButton onClick={() => setState({ count: state.count + 1 })}>
-          +1
-        </OnButton>
-        <OnButton onClick={() => setState({ count: 0 })}>reset</OnButton>
-        <OnButton onClick={() => setState({ count: state.count - 1 })}>
-          -1
-        </OnButton>
+        <OnButton onClick={() => setCount(count + 1)}>+1</OnButton>
+        <OnButton onClick={() => setCount(0)}>reset</OnButton>
+        <OnButton onClick={() => setCount(count - 1)}>-1</OnButton>
       </ButtonWrapper>
       <Form action="">
         <InputBox
           placeholder="input box"
-          onChange={(e) => setState({ text: e.target.value })}
-          value={props.text}
+          onChange={(e) => setText(e.target.value)}
+          value={text}
         />
       </Form>
     </Wrapper>

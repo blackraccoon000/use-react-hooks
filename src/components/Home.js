@@ -30,8 +30,8 @@ const Home = (props) => {
       <StyledLink to="/countUp" name="">
         CountUp
       </StyledLink>
-      <StyledLink to="/note" name="">
-        Note
+      <StyledLink to="/noteApp" name="">
+        NoteApp
       </StyledLink>
     </Wrapper>
   );
